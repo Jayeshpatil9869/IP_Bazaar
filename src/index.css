@@ -1,0 +1,84 @@
+/* Import custom animations */
+@import "./styles/animations.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-lighter-grey font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    /* --background: 247 247 247; */
+    --foreground: 59 89 152;
+    --card: 255 255 255;
+    --card-foreground: 59 89 152;
+    --popover: 255 255 255;
+    --popover-foreground: 59 89 152;
+    --primary: 59 89 152;
+    --primary-foreground: 255 255 255;
+    --secondary: 139 157 195;
+    --secondary-foreground: 255 255 255;
+    --muted: 223 227 238;
+    --muted-foreground: 59 89 152;
+    --accent: 247 247 247;
+    --accent-foreground: 59 89 152;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 223 227 238;
+    --input: 223 227 238;
+    --ring: 59 89 152;
+    --radius: 0.5rem;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary/90 transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-outline {
+    @apply border-2 border-secondary text-secondary px-6 py-3 rounded-lg font-medium hover:bg-secondary hover:text-white transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-muted rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-white;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 border border-muted hover:shadow-lg transition-all duration-300;
+  }
+
+  .sidebar-link {
+    @apply flex items-center px-4 py-3 text-gray-700 hover:bg-light-grey hover:text-primary transition-all duration-200 rounded-lg mx-2;
+  }
+
+  .sidebar-link.active {
+    @apply bg-primary text-white hover:bg-primary hover:text-white shadow-sm;
+  }
+
+  .table-row {
+    @apply border-b border-muted hover:bg-accent transition-colors duration-150;
+  }
+
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50;
+  }
+
+  .modal-content {
+    @apply bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto;
+  }
+}
