@@ -44,45 +44,45 @@ export class BaseCrudService {
       'Team Members': [
         {
           _id: '1',
-          name: 'Sarah Johnson',
+          name: 'Arjun Mehta',
           role: 'Senior Patent Attorney',
           bio: 'With over 15 years of experience in patent law, Sarah specializes in technology and biotech patents.',
-          avatar: '/api/placeholder/150/150'
+          avatar: "./AjunMeheta.jpg"
         },
         {
           _id: '2',
-          name: 'Michael Chen',
+          name: 'Rohan Kapoor',
           role: 'Trademark Specialist',
           bio: 'Michael has helped hundreds of businesses protect their brand identity through strategic trademark planning.',
-          avatar: '/api/placeholder/150/150'
+          avatar: "./RohanKapoor.jpg"
         },
         {
           _id: '3',
-          name: 'Emily Rodriguez',
+          name: 'Vikram Iyer',
           role: 'IP Litigation Partner',
           bio: 'Emily leads our litigation team with a track record of successful IP enforcement cases.',
-          avatar: '/api/placeholder/150/150'
+          avatar: "./VikramIyer.jpg"
         },
         {
           _id: '4',
-          name: 'David Kim',
+          name: 'Neha Sharma',
           role: 'IP Strategy Consultant',
           bio: 'David helps companies develop comprehensive IP strategies that drive business value.',
-          avatar: '/api/placeholder/150/150'
+          avatar: "./NehaSharma.jpg"
         },
         {
           _id: '5',
-          name: 'Lisa Thompson',
+          name: 'Siddharth Verma',
           role: 'Copyright Attorney',
           bio: 'Lisa specializes in creative industries and digital media copyright protection.',
-          avatar: '/api/placeholder/150/150'
+          avatar: "./SiddharthVerma.jpg"
         },
         {
           _id: '6',
-          name: 'Robert Wilson',
+          name: 'Anupam Sharma',
           role: 'IP Analytics Director',
           bio: 'Robert leverages data analytics to provide insights on IP portfolio optimization.',
-          avatar: '/api/placeholder/150/150'
+          avatar: "./AnupamSharma.jpg"  
         }
       ],
       'Statistics': [
@@ -116,35 +116,36 @@ export class BaseCrudService {
         }
       ],
       'Testimonials': [
-        {
-          _id: '1',
-          testimonialText: 'IPV4Bazaar helped us secure crucial patents that became the foundation of our $50M funding round. Their expertise is unmatched.',
-          clientName: 'Alex Rivera',
-          clientRole: 'CEO',
-          clientCompany: 'TechStart Inc.',
-          clientAvatar: '/api/placeholder/100/100'
-        },
-        {
-          _id: '2',
-          testimonialText: 'The trademark protection services saved our brand from potential infringement. Professional, efficient, and results-driven.',
-          clientName: 'Maria Santos',
-          clientRole: 'Founder',
-          clientCompany: 'Creative Brands Co.',
-          clientAvatar: '/api/placeholder/100/100'
-        },
-        {
-          _id: '3',
-          testimonialText: 'Outstanding IP strategy consulting that helped us identify and protect our most valuable assets. Highly recommended.',
-          clientName: 'James Park',
-          clientRole: 'CTO',
-          clientCompany: 'Innovation Labs',
-          clientAvatar: '/api/placeholder/100/100'
-        }
-      ],
+  {
+    _id: '1',
+    testimonialText: 'IPV4Bazaar helped us secure crucial patents that became the foundation of our $50M funding round. Their expertise is unmatched.',
+    clientName: 'Aarav Reddy',
+    clientRole: 'CEO',
+    clientCompany: 'TechStart Inc.',
+    clientAvatar: "./AaravReddy.webp"
+  },
+  {
+    _id: '2',
+    testimonialText: 'The trademark protection services saved our brand from potential infringement. Professional, efficient, and results-driven.',
+    clientName: 'Kavya Sharma',
+    clientRole: 'Founder',
+    clientCompany: 'Creative Brands Co.',
+    clientAvatar: "./KavyaSharma.jpg"
+  },
+  {
+    _id: '3',
+    testimonialText: 'Outstanding IP strategy consulting that helped us identify and protect our most valuable assets. Highly recommended.',
+    clientName: 'Sweety Deore',
+    clientRole: 'CTO',
+    clientCompany: 'Innovation Labs',
+    clientAvatar: "./SweetyDeore.avif"
+  }
+]
+,
       'Milestones': [
         {
           _id: '1',
-          year: '2024',
+          year: '2020',
           title: 'Company Founded',
           description: 'IPV4Bazaar was established with a mission to democratize IP protection for businesses of all sizes.',
           order: 1

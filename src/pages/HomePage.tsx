@@ -285,17 +285,21 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-12">
-            <Link to="/services">
+            <Link to="/services" className="inline-block group relative">
               <Button
                 variant="link"
                 size="lg"
-                className="font-paragraph hover:scale-105 transition-all duration-300"
+                className="font-paragraph hover:scale-105 transition-all duration-300 text-primary"
               >
-                View All Services
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-          </div>
+                <span className="relative">
+                  View All Services
+        <span className="absolute left-0 -bottom-0.5 h-0.5 w-full origin-right scale-x-0 bg-primary transition-transform duration-300 ease-out group-hover:scale-x-100 group-hover:origin-left" />
+      </span>
+      <ArrowRight className="ml-2 h-5 w-5" />
+    </Button>
+  </Link>
+</div>
+
         </div>
       </section>
 

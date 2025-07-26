@@ -16,7 +16,6 @@ const Navigation: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Scroll to top when location changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
@@ -63,17 +62,18 @@ const Navigation: React.FC = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 ${
+                  className={`group relative px-3 py-2 text-sm font-medium transition-colors duration-300 ${
                     location.pathname === item.path
                       ? isScrolled
-                        ? "text-primary border-b-2 border-primary"
-                        : "text-white border-b-2 border-white"
+                        ? "text-primary"
+                        : "text-white"
                       : isScrolled
                       ? "text-gray-700 hover:text-primary"
                       : "text-white/90 hover:text-white"
                   }`}
                 >
                   {item.name}
+                  <span className="absolute left-0 -bottom-0.5 h-0.5 w-full origin-right scale-x-0 bg-current transition-transform duration-300 ease-out group-hover:scale-x-100 group-hover:origin-left" />
                 </Link>
               ))}
             </div>
@@ -83,23 +83,26 @@ const Navigation: React.FC = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Link
               to="/login"
-              className={`px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 ${
+              className={`group relative px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 ${
                 isScrolled
                   ? "text-gray-700 hover:text-primary"
                   : "text-white/90 hover:text-white"
               }`}
             >
               Login
+              <span className="absolute left-0 -bottom-0.5 h-0.5 w-full origin-right scale-x-0 bg-current transition-transform duration-300 ease-out group-hover:scale-x-100 group-hover:origin-left" />
             </Link>
+
             <Link
               to="/signup"
-              className={`px-6 py-2 text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg ${
+              className={`group relative px-6 py-2 text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg ${
                 isScrolled
                   ? "bg-primary text-white hover:bg-primary/90"
                   : "bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30"
               }`}
             >
               Sign Up
+              {/* <span className="absolute left-0 -bottom-0.5 h-0.5 w-full origin-right scale-x-0 bg-white transition-transform duration-300 ease-out group-hover:scale-x-100 group-hover:origin-left" /> */}
             </Link>
           </div>
 

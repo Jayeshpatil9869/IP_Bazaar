@@ -22,44 +22,28 @@ const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links with Hover Underline Animation */}
           <div className="md:col-span-1">
             <h3 className="text-lg font-semibold text-white mb-4">
               Quick Links
             </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/"
-                  className="text-white/90 hover:text-white transition-colors duration-200 block"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about"
-                  className="text-white/90 hover:text-white transition-colors duration-200 block"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/services"
-                  className="text-white/90 hover:text-white transition-colors duration-200 block"
-                >
-                  Our Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="text-white/90 hover:text-white transition-colors duration-200 block"
-                >
-                  Contact Us
-                </Link>
-              </li>
+            <ul className="space-y-2 text-sm">
+              {[
+                { name: "Home", path: "/" },
+                { name: "About Us", path: "/about" },
+                { name: "Our Services", path: "/services" },
+                { name: "Contact Us", path: "/contact" },
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="group relative inline-block text-white/90 hover:text-white uppercase tracking-wide transition-colors duration-200"
+                  >
+                    {link.name}
+                    <span className="absolute left-0 -bottom-0.5 h-0.5 w-full origin-right scale-x-0 bg-white transition-transform duration-300 ease-out group-hover:scale-x-100 group-hover:origin-left"></span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -69,23 +53,43 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center justify-center md:justify-start">
                 <Mail className="h-4 w-4 text-white/80 mr-2 flex-shrink-0" />
-                <a href="mailto:sales@infinityconsultants.in" className="text-white/90 text-sm">sales@infinityconsultants.in</a>
+                <a
+                  href="mailto:sales@infinityconsultants.in"
+                  className="text-white/90 text-sm"
+                >
+                  sales@infinityconsultants.in
+                </a>
               </div>
               <div className="flex items-center justify-center md:justify-start">
                 <Phone className="h-4 w-4 text-white/80 mr-2 flex-shrink-0" />
                 <span className="text-white/90 text-sm">+91 9811153942</span>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center justify-center md:justify-start text-center md:text-left gap-1">
-  <div className="flex justify-center sm:justify-start">
-    <MapPin className="h-4 w-4 text-white/80 mr-2 flex-shrink-0" />
-  </div>
-  <span className="text-white/90 text-sm break-words whitespace-normal">
-    1/5599 Street No 14, Balbir Nagar Extn, Shahdara, Delhi – 110032
-  </span>
-</div>
-
+                <div className="flex justify-center sm:justify-start">
+                  <MapPin className="h-4 w-4 text-white/80 mr-2 flex-shrink-0" />
+                </div>
+                <span className="text-white/90 text-sm break-words whitespace-normal">
+                  1/5599 Street No 14, Balbir Nagar Extn, Shahdara, Delhi –
+                  110032
+                </span>
+              </div>
             </div>
           </div>
+        </div>
+        
+        {/* Managed by DigiMirai */}
+        <div className="border-t border-white/20 mt-8 pt-4 text-center">
+          <p className="text-white/80 text-[2vh]">
+            Managed by{" "}
+            <a
+              href="https://digimirai.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-white/90 underline transition-colors duration-200"
+            >
+              DigiMirai
+            </a>
+          </p>
         </div>
       </div>
     </footer>

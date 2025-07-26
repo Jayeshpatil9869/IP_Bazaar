@@ -37,34 +37,52 @@ export default function AboutPage() {
   // Static team data based on provided content
   const staticTeamMembers = [
     {
-      name: "Sarah Johnson",
+      name: "Aarav Reddy",
       role: "CEO & Founder",
-      avatar: "/api/placeholder/150/150",
-      initials: "SJ"
+      avatar: "/AaravReddy.webp",
+      initials: "AR"
     },
     {
-      name: "Michael Chen",
+      name: "Ajun Meheta",
       role: "Head of Brokerage",
-      avatar: "/api/placeholder/150/150",
-      initials: "MC"
+      avatar: "/AjunMeheta.jpg",
+      initials: "AM"
     },
     {
-      name: "Emily Rodriguez",
+      name: "Ananya Deshmukh",
       role: "Lead RIR Policy Analyst",
-      avatar: "/api/placeholder/150/150",
-      initials: "ER"
+      avatar: "/AnanyaDeshmukh.jpg",
+      initials: "AD"
     },
     {
-      name: "David Kim",
+      name: "Jayant Patel",
       role: "Chief Technology Officer",
-      avatar: "/api/placeholder/150/150",
-      initials: "DK"
+      avatar: "/JayantPatel.jpg",
+      initials: "JP"
     },
     {
-      name: "Lisa Thompson",
+      name: "Meera Nair",
       role: "Head of Client Relations",
-      avatar: "/api/placeholder/150/150",
-      initials: "LT"
+      avatar: "/MeeraNair.jpg",
+      initials: "MN"
+    },
+    {
+      name: "Priya Sharma",
+      role: "Marketing Director",
+      avatar: "/PriyaSharma.jpg",
+      initials: "PS"
+    },
+    {
+      name: "Rohan Kapoor",
+      role: "Senior Developer",
+      avatar: "/RohanKapoor.jpg",
+      initials: "RK"
+    },
+    {
+      name: "Vikram Iyer",
+      role: "Business Analyst",
+      avatar: "/VikramIyer.jpg",
+      initials: "VI"
     }
   ];
 
@@ -127,7 +145,7 @@ export default function AboutPage() {
       clientName: "John D.",
       clientRole: "CTO",
       clientCompany: "Cloud Solutions Inc.",
-      avatar: "/api/placeholder/60/60",
+      avatar: "/RohanKapoor.jpg",
       initials: "JD"
     },
     {
@@ -135,8 +153,16 @@ export default function AboutPage() {
       clientName: "Maria P.",
       clientRole: "Network Manager",
       clientCompany: "TechNet ISP",
-      avatar: "/api/placeholder/60/60",
+      avatar: "/PriyaSharma.jpg",
       initials: "MP"
+    },
+    {
+      text: "Professional service and deep understanding of IPv4 regulations. They guided us through our first ARIN transfer seamlessly.",
+      clientName: "David L.",
+      clientRole: "IT Director",
+      clientCompany: "Global Networks Ltd.",
+      avatar: "/VikramIyer.jpg",
+      initials: "DL"
     }
   ];
 
