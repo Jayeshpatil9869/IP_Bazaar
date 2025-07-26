@@ -6,7 +6,7 @@ import toast from 'react-hot-toast'
 import { useAuth } from '../../contexts/AuthContext'
 import { User } from '../../types'
 import Sidebar from '../../components/Sidebar'
-import { getAllUsers } from '../../services/adminService'
+import { getAllUsers, updateUser } from '../../services/adminService'
 
 interface EditUserFormData {
   name: string
@@ -100,16 +100,23 @@ const AdminRegistrations: React.FC = () => {
 
   const onSubmit = async (data: EditUserFormData) => {
     try {
-      // Mock update - replace with actual MCP server call
       if (selectedUser) {
-        const updatedUser = { ...selectedUser, ...data }
+        // Call the actual API to update user in database
+        const updatedUser = await updateUser(selectedUser.id, {
+          name: data.name,
+          email: data.email,
+          city: data.city
+        })
+        
+        // Update local state with the response from server
         setUsers(prev => prev.map(user => user.id === selectedUser.id ? updatedUser : user))
         setSelectedUser(updatedUser)
         setEditMode(false)
         toast.success('User updated successfully!')
       }
     } catch (error) {
-      toast.error('Failed to update user')
+      console.error('Error updating user:', error)
+      toast.error('Failed to update user. Please try again.')
     }
   }
 

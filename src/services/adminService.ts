@@ -146,6 +146,32 @@ export const getAllUsers = async (): Promise<User[]> => {
   }
 }
 
+// Update user information
+export const updateUser = async (userId: string, userData: { name: string; email: string; city: string }): Promise<User> => {
+  try {
+    const { data, error } = await supabase
+      .from('users')
+      .update({
+        name: userData.name,
+        email: userData.email,
+        city: userData.city,
+        updated_at: new Date().toISOString()
+      })
+      .eq('id', userId)
+      .select('id, name, email, city, verification_status, created_at')
+      .single()
+
+    if (error) {
+      throw error
+    }
+
+    return data
+  } catch (error) {
+    console.error('Error updating user:', error)
+    throw error
+  }
+}
+
 // Update request status (if you want to add this feature)
 export const updateRequestStatus = async (requestId: string, status: string, adminNotes?: string) => {
   try {
