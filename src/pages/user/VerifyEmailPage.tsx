@@ -65,7 +65,7 @@ const VerifyEmailPage: React.FC = () => {
         <div className="text-center">
           <div className="flex items-center justify-center mb-6">
             <Shield className="h-12 w-12 text-primary-blue mr-3" />
-            <h1 className="text-3xl font-bold text-primary-blue">IPBazaar</h1>
+            <h1 className="text-3xl font-bold text-primary-blue">IPV4Bazaar</h1>
           </div>
         </div>
 

@@ -53,7 +53,7 @@ const Sidebar: React.FC<SidebarProps> = ({ user, admin, onLogout }) => {
       <div className="p-6 border-b border-muted">
         <div className="flex items-center">
           <Shield className="h-8 w-8 text-primary mr-3" />
-          <span className="text-2xl font-bold text-primary">IPBazaar</span>
+          <span className="text-2xl font-bold text-primary">IPV4Bazaar</span>
         </div>
         {isAdmin && (
           <span className="text-xs text-secondary mt-1 block">Admin Panel</span>

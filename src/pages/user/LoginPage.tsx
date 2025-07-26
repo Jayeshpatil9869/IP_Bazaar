@@ -40,7 +40,7 @@ const LoginPage: React.FC = () => {
           </Link>
           <div className="flex items-center justify-center mb-6">
             <Shield className="h-12 w-12 text-primary-blue mr-3" />
-            <h1 className="text-3xl font-bold text-primary-blue">IPBazaar</h1>
+            <h1 className="text-3xl font-bold text-primary-blue">IPV4Bazaar</h1>
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Welcome Back</h2>
           <p className="text-gray-600">Sign in to your account to continue</p>
@@ -119,15 +119,6 @@ const LoginPage: React.FC = () => {
               <Link to="/signup" className="text-secondary-blue hover:text-primary-blue font-medium transition-colors">
                 Sign Up
               </Link>
-            </p>
-          </div>
-
-          {/* Demo Credentials */}
-          <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-            <h3 className="text-sm font-medium text-blue-800 mb-2">Demo Credentials:</h3>
-            <p className="text-sm text-blue-700">
-              Email: demo@ipbazaar.com<br />
-              Password: demo123
             </p>
           </div>
         </div>

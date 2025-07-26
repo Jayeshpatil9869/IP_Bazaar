@@ -21,6 +21,13 @@ import {
   CheckCircle,
   ArrowRight,
   TrendingUp,
+  Network,
+  DollarSign,
+  Clock,
+  Lock,
+  Users,
+  Globe,
+  Zap,
 } from "lucide-react";
 
 export default function ServicesPage() {
@@ -44,35 +51,114 @@ export default function ServicesPage() {
     loadData();
   }, []);
 
-  const workflowSteps = [
+  // Static IPv4 services based on provided content
+  const ipv4Services = [
+    {
+      icon: Network,
+      title: "Buy IPv4 Blocks",
+      description: "Acquire the address space you need, from small /24 blocks to large /16 blocks, through our verified listings.",
+    },
+    {
+      icon: DollarSign,
+      title: "Sell IPv4 Addresses",
+      description: "Monetize your unused or legacy IPv4 assets by connecting with qualified buyers on our global platform.",
+    },
+    {
+      icon: Clock,
+      title: "Trusted IPv4 Transfers",
+      description: "Facilitating secure transfers between vetted buyers and sellers. Experience safe, hassle-free transactions with end-to-end IP validation and protection.",
+    },
+    {
+      icon: FileText,
+      title: "RIR Transfer Support",
+      description: "Expert legal and technical support for navigating transfer processes within ARIN, RIPE, APNIC, LACNIC, and AFRINIC.",
+    },
+    {
+      icon: Award,
+      title: "IP Strategy Consulting",
+      description: "Strategic guidance for your IPv4 assets, including valuation, management, and planning for IPv6 transition.",
+    },
+    {
+      icon: Lock,
+      title: "Escrow & Payment Services",
+      description: "Secure handling of all funds and assets to guarantee peace of mind for both buyers and sellers.",
+    },
+  ];
+
+  // Our process steps based on provided content
+  const processSteps = [
     {
       step: 1,
       title: "Submit Your Request",
-      description:
-        "Fill out our simple form with your IP requirements and documentation.",
+      description: "Contact us with your needs, whether you are buying, selling, or leasing. Provide details on the block size and region.",
       icon: FileText,
     },
     {
       step: 2,
-      title: "Expert Review",
-      description:
-        "Our IP specialists review your submission and conduct preliminary research.",
+      title: "Expert Review & Vetting",
+      description: "Our team vets all parties and address blocks to ensure they are clean, legitimate, and meet RIR policy requirements.",
       icon: Search,
     },
     {
       step: 3,
-      title: "Protection Strategy",
-      description:
-        "We develop a customized protection strategy tailored to your needs.",
+      title: "Secure Transaction",
+      description: "We draft a purchase agreement and hold funds in escrow. The seller then initiates the transfer process with their RIR.",
       icon: Shield,
     },
     {
       step: 4,
-      title: "File & Monitor",
-      description:
-        "We file your application and provide ongoing monitoring and support.",
-      icon: Award,
+      title: "RIR Approval & Payout",
+      description: "Once the RIR approves the transfer and the buyer confirms receipt, we release the funds to the seller, completing the deal.",
+      icon: CheckCircle,
     },
+  ];
+
+  // What sets us apart features
+  const differentiators = [
+    {
+      icon: Award,
+      title: "Expert Brokers",
+      description: "Decades of experience in IP brokerage and RIR policy.",
+    },
+    {
+      icon: Globe,
+      title: "Global Network",
+      description: "Unmatched access to buyers and sellers across all five RIR regions.",
+    },
+    {
+      icon: DollarSign,
+      title: "Transparent Pricing",
+      description: "Clear, upfront fee structures with no hidden costs.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Full Compliance",
+      description: "We guarantee every transaction adheres strictly to current RIR transfer policies.",
+    },
+  ];
+
+  // Static statistics for proven track record
+  const trackRecordStats = [
+    {
+      value: "1,500+",
+      label: "Clients Served",
+      icon: Users
+    },
+    {
+      value: "7,500+",
+      label: "IP Blocks Transferred",
+      icon: Network
+    },
+    {
+      value: "80+",
+      label: "Countries Covered",
+      icon: Globe
+    },
+    {
+      value: "99%",
+      label: "Success Rate",
+      icon: TrendingUp
+    }
   ];
 
   const getServiceIcon = (serviceName: string) => {
@@ -91,20 +177,19 @@ export default function ServicesPage() {
       <section className="relative pt-16 py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/api/placeholder/1920/800"
+            src="https://www.honeywell.com/content/dam/honeywellbt/en/images/horizontal/hon-corp-as-267083224-2880x1440.jpg"
             alt="Our IP Services Background"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover position-bottom"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/60 to-secondary/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-primary/50 to-secondary/40"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-heading text-4xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up">
-            Our IP Services
+            Our IPv4 Services
           </h1>
           <p className="font-paragraph text-lg lg:text-xl text-white/90 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-            Comprehensive intellectual property solutions designed to protect,
-            manage, and maximize the value of your innovations.
+            Comprehensive solutions designed to protect, manage, and leverage the value of your network assets.
           </p>
         </div>
       </section>
@@ -114,20 +199,19 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary mb-4">
-              Complete IP Protection Suite
+              Complete Solutions Suite
             </h2>
             <p className="font-paragraph text-lg text-gray-600">
-              From initial consultation to ongoing management, we cover all
-              aspects of IP protection
+              From initial consultation to ongoing management, we cover all aspects of IPv4 transactions.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => {
-              const IconComponent = getServiceIcon(service.serviceName);
+            {ipv4Services.map((service, index) => {
+              const IconComponent = service.icon;
               return (
                 <Card
-                  key={service._id}
+                  key={index}
                   className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -135,22 +219,12 @@ export default function ServicesPage() {
                     <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="h-6 w-6 text-secondary" />
                     </div>
-                    <h3 className="font-heading text-xl font-semibold text-primary mb-3">
-                      {service.serviceName}
+                    <h3 className="font-heading text-xl font-semibold text-primary mb-2">
+                      {service.title}
                     </h3>
                     <p className="font-paragraph text-gray-600 mb-4">
-                      {service.shortDescription}
+                      {service.description}
                     </p>
-                    <Accordion type="single" collapsible className="w-full">
-                      <AccordionItem value="details" className="border-0">
-                        <AccordionTrigger className="font-paragraph text-sm text-secondary hover:text-primary py-2 hover:scale-105 transition-all duration-300">
-                          Learn More
-                        </AccordionTrigger>
-                        <AccordionContent className="font-paragraph text-sm text-gray-600 pt-2">
-                          {service.detailedDescription}
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
                   </CardContent>
                 </Card>
               );
@@ -173,10 +247,10 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {workflowSteps.map((step, index) => (
+            {processSteps.map((step, index) => (
               <div key={step.step} className="relative">
                 {/* Connection line */}
-                {index < workflowSteps.length - 1 && (
+                {index < processSteps.length - 1 && (
                   <div className="hidden lg:block absolute top-6 left-full w-full h-0.5 bg-secondary/30 z-0"></div>
                 )}
 
@@ -340,11 +414,11 @@ export default function ServicesPage() {
       <section className="relative py-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/api/placeholder/1920/600"
+            src="https://larus.net/assets/frontend/images/home/home_banner_bg.webp"
             alt="Start Your IP Journey Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/60 to-secondary/60"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -359,7 +433,7 @@ export default function ServicesPage() {
             <Link to="/contact">
               <Button
                 size="lg"
-                variant="secondary"
+                variant="default"
                 className="font-paragraph hover:scale-105 transition-all duration-300 shadow-lg"
               >
                 Get Free Consultation
@@ -369,7 +443,7 @@ export default function ServicesPage() {
             <Link to="/about">
               <Button
                 size="lg"
-          variant="secondary"
+          variant="default"
                 className="font-paragraph border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary hover:scale-105 transition-all duration-300" 
               >
                 Learn About Us

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { BaseCrudService } from "@/integrations";
@@ -19,6 +20,10 @@ import {
   TrendingUp,
   ArrowRight,
   Quote,
+  Lightbulb,
+  Building,
+  CheckCircle,
+  Rocket,
 } from "lucide-react";
 
 export default function AboutPage() {
@@ -28,6 +33,112 @@ export default function AboutPage() {
   const [milestones, setMilestones] = useState<CompanyMilestones[]>([]);
   const [animationClasses, setAnimationClasses] = useState<string[]>([]);
   const timelineRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Static team data based on provided content
+  const staticTeamMembers = [
+    {
+      name: "Sarah Johnson",
+      role: "CEO & Founder",
+      avatar: "/api/placeholder/150/150",
+      initials: "SJ"
+    },
+    {
+      name: "Michael Chen",
+      role: "Head of Brokerage",
+      avatar: "/api/placeholder/150/150",
+      initials: "MC"
+    },
+    {
+      name: "Emily Rodriguez",
+      role: "Lead RIR Policy Analyst",
+      avatar: "/api/placeholder/150/150",
+      initials: "ER"
+    },
+    {
+      name: "David Kim",
+      role: "Chief Technology Officer",
+      avatar: "/api/placeholder/150/150",
+      initials: "DK"
+    },
+    {
+      name: "Lisa Thompson",
+      role: "Head of Client Relations",
+      avatar: "/api/placeholder/150/150",
+      initials: "LT"
+    }
+  ];
+
+  // Static statistics based on provided content
+  const staticStatistics = [
+    {
+      value: "1,500+",
+      label: "Clients Served",
+      icon: Users
+    },
+    {
+      value: "7,500+",
+      label: "IP Blocks Transferred",
+      icon: Globe
+    },
+    {
+      value: "80+",
+      label: "Countries Covered",
+      icon: Award
+    },
+    {
+      value: "99%",
+      label: "Success Rate on Transfers",
+      icon: TrendingUp
+    }
+  ];
+
+  // Static journey timeline based on provided content
+  const journeyTimeline = [
+    {
+      year: "2021",
+      title: "The Idea",
+      description: "Our founders, a team of network engineers, identify a critical need for a transparent IPv4 marketplace.",
+      icon: Lightbulb
+    },
+    {
+      year: "2022",
+      title: "Company Formation",
+      description: "IP Bazaar is officially founded with a mission to build a secure platform for IP brokers and businesses.",
+      icon: Building
+    },
+    {
+      year: "2023",
+      title: "First Major Transfer",
+      description: "We successfully facilitate our first inter-regional /16 block transfer, proving our model and process.",
+      icon: CheckCircle
+    },
+    {
+      year: "2024",
+      title: "Platform Launch",
+      description: "The IP Bazaar online marketplace officially launches to the public, offering a full suite of services.",
+      icon: Rocket
+    }
+  ];
+
+  // Static testimonials based on provided content
+  const staticTestimonials = [
+    {
+      text: "The IP Bazaar team made selling our legacy address block effortless. Their expertise in handling the RIPE transfer process was invaluable.",
+      clientName: "John D.",
+      clientRole: "CTO",
+      clientCompany: "Cloud Solutions Inc.",
+      avatar: "/api/placeholder/60/60",
+      initials: "JD"
+    },
+    {
+      text: "As a growing ISP, we needed IPv4 space quickly. IP Bazaar found us a seller in under a week and handled everything. Highly recommended.",
+      clientName: "Maria P.",
+      clientRole: "Network Manager",
+      clientCompany: "TechNet ISP",
+      avatar: "/api/placeholder/60/60",
+      initials: "MP"
+    }
+  ];
 
   useEffect(() => {
     const loadData = async () => {
@@ -92,20 +203,19 @@ export default function AboutPage() {
       <section className="relative pt-16 py-12 md:py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/api/placeholder/1920/800"
+            src="https://images.pexels.com/photos/5990047/pexels-photo-5990047.jpeg"
             alt="About Us Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/60 to-secondary/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-primary/50 to-secondary/40"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-heading text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up">
-            About IPBazaar
+            About IPV4Bazaar
           </h1>
           <p className="font-paragraph text-lg lg:text-xl text-white/90 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-            A dedicated team of intellectual property experts committed to
-            protecting and enhancing your business innovations worldwide.
+            A dedicated team of network and market experts committed to providing a transparent and reliable bridge for the global IPv4 community.
           </p>
         </div>
       </section>
@@ -125,11 +235,7 @@ export default function AboutPage() {
                   </h2>
                 </div>
                 <p className="font-paragraph text-gray-600 leading-relaxed">
-                  To democratize intellectual property protection by providing
-                  accessible, comprehensive, and expert IP services to
-                  businesses of all sizes. We believe every innovation deserves
-                  protection, and every entrepreneur should have access to
-                  world-class IP expertise.
+                  To simplify the complexities of the IPv4 market, making it easy and secure for any organization to buy, sell, or lease IP addresses. We are committed to upholding all RIR policies and promoting fair market practices.
                 </p>
               </CardContent>
             </Card>
@@ -145,11 +251,7 @@ export default function AboutPage() {
                   </h2>
                 </div>
                 <p className="font-paragraph text-gray-600 leading-relaxed">
-                  To become the global leader in intellectual property
-                  management, fostering innovation and creativity worldwide. We
-                  envision a future where IP protection is seamless, efficient,
-                  and empowers businesses to focus on what they do best -
-                  innovating.
+                  To be the world's leading and most trusted platform for IP address transfers and management, while actively supporting the global transition to IPv6.
                 </p>
               </CardContent>
             </Card>
@@ -355,11 +457,11 @@ export default function AboutPage() {
       <section className="relative py-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/api/placeholder/1920/600"
+            src="https://larus.net/assets/frontend/images/home/home_banner_bg.webp"
             alt="Join Our Mission Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/60 to-secondary/70"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -374,7 +476,7 @@ export default function AboutPage() {
             <Link to="/contact">
               <Button
                 size="lg"
-                variant="secondary"
+                variant="default"
                 className="font-paragraph hover:scale-105 transition-all duration-300 shadow-lg"
               >
                 Get Started Today
@@ -384,7 +486,7 @@ export default function AboutPage() {
             <Link to="/services">
               <Button
                 size="lg"
-                variant="secondary"
+                variant="default"
                 className="font-paragraph border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary hover:scale-105 transition-all duration-300"
               >
                 Explore Our Services

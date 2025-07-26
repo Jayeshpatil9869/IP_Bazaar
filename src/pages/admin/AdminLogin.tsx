@@ -46,7 +46,7 @@ const AdminLogin: React.FC = () => {
               <div className="flex items-center">
                 <Shield className="h-8 w-8 text-primary-blue mr-2" />
                 <h1 className="text-2xl font-bold text-primary-blue">
-                  IPBazaar
+                  IPV4Bazaar
                 </h1>
               </div>
               <p className="text-sm text-secondary-blue">Admin Panel</p>
@@ -129,18 +129,6 @@ const AdminLogin: React.FC = () => {
               {loading ? "Signing In..." : "Admin Login"}
             </button>
           </form>
-
-          {/* Demo Credentials */}
-          <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-            <h3 className="text-sm font-medium text-blue-800 mb-2">
-              Demo Admin Credentials:
-            </h3>
-            <p className="text-sm text-blue-700">
-              Username: admin
-              <br />
-              Password: admin123
-            </p>
-          </div>
         </div>
 
         {/* Security Notice */}

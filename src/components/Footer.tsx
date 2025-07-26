@@ -11,14 +11,14 @@ const Footer: React.FC = () => {
           <div className="md:col-span-1">
             <div className="flex items-center justify-center md:justify-start mb-4">
               <Shield className="h-8 w-8 text-white mr-2" />
-              <span className="text-2xl font-bold text-white">IPBazaar</span>
+              <span className="text-2xl font-bold text-white">IPV4Bazaar</span>
             </div>
             <p className="text-white/90 leading-relaxed">
               Your trusted partner for comprehensive intellectual property
               management services.
             </p>
             <p className="text-white/80 text-sm mt-2">
-              © 2024 IPBazaar. All rights reserved.
+              © 2024 IPV4Bazaar. All rights reserved.
             </p>
           </div>
 
@@ -69,16 +69,16 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center justify-center md:justify-start">
                 <Mail className="h-4 w-4 text-white/80 mr-2 flex-shrink-0" />
-                <span className="text-white/90 text-sm">info@ipbazaar.com</span>
+                <a href="mailto:sales@infinityconsultants.in" className="text-white/90 text-sm">sales@infinityconsultants.in</a>
               </div>
               <div className="flex items-center justify-center md:justify-start">
                 <Phone className="h-4 w-4 text-white/80 mr-2 flex-shrink-0" />
-                <span className="text-white/90 text-sm">+1 (555) 123-4567</span>
+                <span className="text-white/90 text-sm">+91 9811153942</span>
               </div>
               <div className="flex items-center justify-center md:justify-start">
                 <MapPin className="h-4 w-4 text-white/80 mr-2 flex-shrink-0" />
                 <span className="text-white/90 text-sm">
-                  123 IP Street, Tech City, TC 12345
+                  1/5599 Street No 14, Balbir Nagar Extn., Shahdara, Delhi – 110032
                 </span>
               </div>
             </div>

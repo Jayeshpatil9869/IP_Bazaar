@@ -48,7 +48,7 @@ const SignUpPage: React.FC = () => {
           </Link>
           <div className="flex items-center justify-center mb-6">
             <Shield className="h-12 w-12 text-primary-blue mr-3" />
-            <h1 className="text-3xl font-bold text-primary-blue">IPBazaar</h1>
+            <h1 className="text-3xl font-bold text-primary-blue">IPV4Bazaar</h1>
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Create Your Account</h2>
           <p className="text-gray-600">Join thousands of innovators protecting their IP</p>

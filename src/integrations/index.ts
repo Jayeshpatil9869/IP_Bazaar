@@ -118,7 +118,7 @@ export class BaseCrudService {
       'Testimonials': [
         {
           _id: '1',
-          testimonialText: 'IPBazaar helped us secure crucial patents that became the foundation of our $50M funding round. Their expertise is unmatched.',
+          testimonialText: 'IPV4Bazaar helped us secure crucial patents that became the foundation of our $50M funding round. Their expertise is unmatched.',
           clientName: 'Alex Rivera',
           clientRole: 'CEO',
           clientCompany: 'TechStart Inc.',
@@ -144,9 +144,9 @@ export class BaseCrudService {
       'Milestones': [
         {
           _id: '1',
-          year: '2020',
+          year: '2024',
           title: 'Company Founded',
-          description: 'IPBazaar was established with a mission to democratize IP protection for businesses of all sizes.',
+          description: 'IPV4Bazaar was established with a mission to democratize IP protection for businesses of all sizes.',
           order: 1
         },
         {

@@ -53,54 +53,49 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email Us",
-      content: "info@ipbazaar.com",
-      description: "Send us an email anytime",
+      content: "sales@infinityconsultants.in",
+      description: "For sales & support inquiries",
     },
     {
       icon: Phone,
       title: "Call Us",
-      content: "+1 (555) 123-4567",
-      description: "Mon-Fri 9AM-6PM EST",
+      content: "+91 9811153942",
+      description: "Mon-Fri, 9 AM-5 PM UTC",
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "123 IP Street, Tech City, TC 12345",
-      description: "Our main office location",
+      content: "1/5599 Street No 14, Balbir Nagar Extn., Shahdara, Delhi – 110032",
+      description: "By appointment only",
     },
     {
       icon: Clock,
       title: "Business Hours",
-      content: "Mon-Fri: 9AM-6PM EST",
-      description: "Weekend support available",
+      content: "Mon-Fri, 9 AM-5 PM UTC",
+      description: "IPv4 transfer support",
     },
   ];
 
   const faqs = [
     {
-      question: "How long does the patent application process take?",
+      question: "Why do I need to buy IPv4 addresses?",
       answer:
-        "The patent application process typically takes 18-36 months, depending on the complexity of the invention and the jurisdiction. We provide regular updates throughout the process.",
+        "All five Regional Internet Registries (RIRs) have exhausted their free pools of IPv4 addresses. The only way to get new blocks is through the transfer market from organizations that hold unused addresses.",
     },
     {
-      question: "What documents do I need for a trademark application?",
+      question: "How long does an IPv4 transfer usually take?",
       answer:
-        "You'll need a clear representation of your mark, a description of goods/services, and proof of use in commerce (if applicable). Our team will guide you through the complete documentation process.",
+        "Timelines vary by RIR, but most transfers are completed within 1 to 4 weeks once a buyer and seller are matched and all paperwork is submitted.",
     },
     {
-      question: "Do you offer international IP protection?",
+      question: "Are inter-regional transfers (e.g., ARIN to RIPE) possible?",
       answer:
-        "Yes, we provide comprehensive international IP protection services across multiple jurisdictions including the US, EU, Asia-Pacific, and other key markets worldwide.",
+        "Yes, inter-RIR transfers are possible but are subject to the specific policies of both the source and recipient regions. Our team can guide you through this complex process.",
     },
     {
-      question: "What are your consultation fees?",
+      question: "How do you ensure my transaction is secure?",
       answer:
-        "We offer a free initial consultation to assess your IP needs. Our transparent pricing structure will be provided during the consultation based on your specific requirements.",
-    },
-    {
-      question: "How do you ensure confidentiality?",
-      answer:
-        "We maintain strict confidentiality protocols and can provide Non-Disclosure Agreements (NDAs) before any detailed discussions about your intellectual property.",
+        "We use a formal sale and purchase agreement and secure third-party escrow services for all transactions. This ensures that funds are only released once the IP addresses have been successfully transferred and verified.",
     },
   ];
 
@@ -112,11 +107,11 @@ export default function ContactPage() {
       <section className="relative pt-16 py-12 md:py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/api/placeholder/1920/800"
+            src="https://images.pexels.com/photos/5453821/pexels-photo-5453821.jpeg"
             alt="Get in Touch Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/60 to-secondary/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-primary/70 to-secondary/40"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -124,8 +119,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="font-paragraph text-lg lg:text-xl text-white/90 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-            Ready to protect your intellectual property? Contact our expert team
-            for personalized guidance and comprehensive IP solutions.
+            Ready to get started with your IPv4 transaction? Contact our expert team for personalized guidance and a quote.
           </p>
         </div>
       </section>
@@ -275,19 +269,19 @@ export default function ContactPage() {
               {/* Map Placeholder */}
               <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-0">
-                  <div className="h-64 bg-gradient-to-br from-accent to-secondary/20 rounded-lg flex items-center justify-center group">
-                    <div className="text-center">
-                      <MapPin className="h-12 w-12 text-secondary mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
-                      <p className="font-paragraph text-gray-600">
-                        Interactive Map
-                      </p>
-                      <p className="font-paragraph text-sm text-gray-500">
-                        123 IP Street, Tech City
-                      </p>
-                    </div>
+                  <div className="bg-gradient-to-br from-accent to-secondary/20 rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d99172.67074800449!2d77.288593!3d28.683307!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfb871791cb41%3A0x10d787382aa6cd7f!2sInfinity%20Consultants%20-%20ISP%20VNO%20OSP%20MSO%20NLD%20PM%20WANI%20Static%20IP%20IP1%20IP%20One%20ASN%20Number%20WPC%20BIS%20DOT%20License!5e1!3m2!1sen!2sin!4v1753516208733!5m2!1sen!2sin"
+                      width="100%"
+                      height="250"
+                      style={{ border: 0 }}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                   </div>
                 </CardContent>
               </Card>
+
             </div>
           </div>
         </div>
@@ -331,35 +325,33 @@ export default function ContactPage() {
       <section className="relative py-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/api/placeholder/1920/600"
+            src="https://larus.net/assets/frontend/images/home/home_banner_bg.webp"
             alt="Let's Start Securing Your IP Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/60 to-secondary/60"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
-            Let's Start Securing Your IP
+            Ready to Start Your IPv4 Transaction?
           </h2>
           <p className="font-paragraph text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-            Don't leave your intellectual property unprotected. Contact us today
-            for a free consultation and take the first step towards
-            comprehensive IP protection.
+            Don't wait to secure the IPv4 addresses you need. Contact us today for expert guidance and competitive pricing on your next IPv4 transaction.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              variant="secondary"
+              variant="default"
               className="font-paragraph hover:scale-105 transition-all duration-300 shadow-lg"
             >
-              Schedule Free Consultation
+              Get Your Quote Today
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Link to="/services">
               <Button
                 size="lg"
-               variant="secondary"
+                variant="default"
                 className="font-paragraph border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary hover:scale-105 transition-all duration-300"
               >
                 View Our Services
