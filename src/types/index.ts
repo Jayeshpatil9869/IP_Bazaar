@@ -33,6 +33,7 @@ export interface AuthContextType {
   login: (email: string, password: string) => Promise<void>
   adminLogin: (username: string, password: string) => Promise<void>
   signup: (name: string, email: string, city: string, password: string) => Promise<void>
+  updateUser: (updatedUser: User) => void
   logout: () => void
   loading: boolean
 }

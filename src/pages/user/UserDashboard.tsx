@@ -18,7 +18,7 @@ interface NewRequestFormData {
 const UserDashboard: React.FC = () => {
   const [showModal, setShowModal] = useState(false)
   const [requests, setRequests] = useState<IPRequest[]>([])
-  const { user, logout } = useAuth()
+  const { user, logout, loading } = useAuth()
   const navigate = useNavigate()
 
   const {
@@ -29,6 +29,9 @@ const UserDashboard: React.FC = () => {
   } = useForm<NewRequestFormData>()
 
   useEffect(() => {
+    // Don't redirect if still loading
+    if (loading) return
+    
     if (!user) {
       navigate('/login')
       return
@@ -46,7 +49,7 @@ const UserDashboard: React.FC = () => {
     }
 
     fetchUserRequests()
-  }, [user, navigate])
+  }, [user, navigate, loading])
 
   const onSubmit = async (data: NewRequestFormData) => {
     try {
@@ -89,6 +92,18 @@ const UserDashboard: React.FC = () => {
       default:
         return 'text-gray-600 bg-gray-100'
     }
+  }
+
+  // Show loading spinner while authentication is being checked
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-lighter-grey">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-blue mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    )
   }
 
   if (!user) {

@@ -14,10 +14,13 @@ const AdminRequests: React.FC = () => {
   const [showModal, setShowModal] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const [urgencyFilter, setUrgencyFilter] = useState('')
-  const { admin, logout } = useAuth()
+  const { admin, logout, loading } = useAuth()
   const navigate = useNavigate()
 
   useEffect(() => {
+    // Don't redirect if still loading
+    if (loading) return
+    
     if (!admin) {
       navigate('/admin/login')
       return
@@ -40,7 +43,7 @@ const AdminRequests: React.FC = () => {
     }
 
     fetchRequests()
-  }, [admin, navigate])
+  }, [admin, navigate, loading])
 
   useEffect(() => {
     let filtered = requests

@@ -116,7 +116,7 @@ export default function HomePage() {
             className="w-full h-full object-cover"
             poster="/api/placeholder/1920/"
           >
-            {/* <source src="Bg_Video.mp4" type="video/mp4" />   */}
+            <source src="Bg_Video.mp4" type="video/mp4" />  
             {/* Fallback gradient if video doesn't load */}
           </video>
           {/* Video overlay */}

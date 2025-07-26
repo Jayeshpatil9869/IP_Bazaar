@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Users, FileText, X } from 'lucide-react'
 import { useAuth } from '../../contexts/AuthContext'
-import { IPRequest, User, DashboardStats } from '../../types'
+import { IPRequest, DashboardStats } from '../../types'
 import Sidebar from '../../components/Sidebar'
 import { getDashboardStats, getLatestRequests } from '../../services/adminService'
 import toast from 'react-hot-toast'
@@ -12,10 +12,13 @@ const AdminDashboard: React.FC = () => {
   const [latestRequests, setLatestRequests] = useState<IPRequest[]>([])
   const [selectedRequest, setSelectedRequest] = useState<IPRequest | null>(null)
   const [showModal, setShowModal] = useState(false)
-  const { admin, logout } = useAuth()
+  const { admin, logout, loading } = useAuth()
   const navigate = useNavigate()
 
   useEffect(() => {
+    // Don't redirect if still loading
+    if (loading) return
+    
     if (!admin) {
       navigate('/admin/login')
       return
@@ -42,7 +45,7 @@ const AdminDashboard: React.FC = () => {
     }
 
     fetchDashboardData()
-  }, [admin, navigate])
+  }, [admin, navigate, loading])
 
   const handleRequestClick = (request: IPRequest) => {
     setSelectedRequest(request)
@@ -70,6 +73,18 @@ const AdminDashboard: React.FC = () => {
       default:
         return 'text-gray-600 bg-gray-100'
     }
+  }
+
+  // Show loading spinner while authentication is being checked
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-lighter-grey">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-blue mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    )
   }
 
   if (!admin) {

@@ -21,7 +21,7 @@ const AdminRegistrations: React.FC = () => {
   const [showModal, setShowModal] = useState(false)
   const [editMode, setEditMode] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
-  const { admin, logout } = useAuth()
+  const { admin, logout, loading } = useAuth()
   const navigate = useNavigate()
 
   const {
@@ -32,6 +32,9 @@ const AdminRegistrations: React.FC = () => {
   } = useForm<EditUserFormData>()
 
   useEffect(() => {
+    // Don't redirect if still loading
+    if (loading) return
+    
     if (!admin) {
       navigate('/admin/login')
       return
@@ -54,7 +57,7 @@ const AdminRegistrations: React.FC = () => {
     }
 
     fetchUsers()
-  }, [admin, navigate])
+  }, [admin, navigate, loading])
 
   useEffect(() => {
     if (searchTerm) {

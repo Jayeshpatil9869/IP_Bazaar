@@ -4,6 +4,7 @@ import { Edit3, Save, X } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { useAuth } from '../../contexts/AuthContext'
+import { updateUserProfile } from '../../services/authService'
 import Sidebar from '../../components/Sidebar'
 
 interface ProfileFormData {
@@ -14,7 +15,8 @@ interface ProfileFormData {
 
 const UserProfile: React.FC = () => {
   const [editMode, setEditMode] = useState(false)
-  const { user, logout } = useAuth()
+  const [updateLoading, setUpdateLoading] = useState(false)
+  const { user, updateUser, logout, loading } = useAuth()
   const navigate = useNavigate()
 
   const {
@@ -31,6 +33,9 @@ const UserProfile: React.FC = () => {
   })
 
   React.useEffect(() => {
+    // Don't redirect if still loading
+    if (loading) return
+    
     if (!user) {
       navigate('/login')
       return
@@ -41,17 +46,40 @@ const UserProfile: React.FC = () => {
       email: user.email,
       city: user.city
     })
-  }, [user, navigate, reset])
+  }, [user, navigate, reset, loading])
 
   const onSubmit = async (data: ProfileFormData) => {
-    try {
-      // Mock update - replace with actual MCP server call
-      // TODO: Replace with actual MCP server call
+    if (!user) return
     
+    try {
+      setUpdateLoading(true)
+      
+      // Call the updateUserProfile service to update the profile in the database
+      const updatedUser = await updateUserProfile(user.id, {
+        name: data.name,
+        email: data.email,
+        city: data.city
+      })
+      
+      // Update the user data in the AuthContext to reflect the changes immediately
+      const updatedUserData = { ...user, ...updatedUser }
+      updateUser(updatedUserData)
+      
+      // Reset the form with updated values
+      reset({
+        name: updatedUser.name,
+        email: updatedUser.email,
+        city: updatedUser.city
+      })
+      
       setEditMode(false)
       toast.success('Profile updated successfully!')
     } catch (error) {
-      toast.error('Failed to update profile')
+      console.error('Profile update error:', error)
+      const errorMessage = error instanceof Error ? error.message : 'Failed to update profile'
+      toast.error(errorMessage)
+    } finally {
+      setUpdateLoading(false)
     }
   }
 
@@ -62,6 +90,18 @@ const UserProfile: React.FC = () => {
       city: user?.city || ''
     })
     setEditMode(false)
+  }
+
+  // Show loading spinner while authentication is being checked
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-lighter-grey">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-blue mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    )
   }
 
   if (!user) {
@@ -224,10 +264,20 @@ const UserProfile: React.FC = () => {
                       </button>
                       <button
                         type="submit"
-                        className="btn-primary inline-flex items-center"
+                        disabled={updateLoading}
+                        className="btn-primary inline-flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        <Save className="h-4 w-4 mr-2" />
-                        Save Changes
+                        {updateLoading ? (
+                          <>
+                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                            Saving...
+                          </>
+                        ) : (
+                          <>
+                            <Save className="h-4 w-4 mr-2" />
+                            Save Changes
+                          </>
+                        )}
                       </button>
                     </div>
                   )}
