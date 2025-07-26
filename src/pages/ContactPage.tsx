@@ -247,7 +247,7 @@ export default function ContactPage() {
                     <CardContent className="p-6">
                       <div className="flex items-start">
                         <div className="w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                          <info.icon className="h-5 w-5 text-secondary" />
+                          <info.icon className="h-5 w-5 text-primary-blue" />
                         </div>
                         <div>
                           <h3 className="font-heading font-semibold text-primary mb-1">

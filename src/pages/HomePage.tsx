@@ -127,9 +127,9 @@ export default function HomePage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-white mb-3   animate-fade-in-up">
-              The #1 Marketplace 
+              The #1 Marketplace for
               <span className="block text-secondary-foreground bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent animate-gradient pb-2">
-              for Buying Selling IPv4 Addresses
+              Buying Selling IPv4 Addresses
               </span>
             </h1>
             <p className="font-paragraph text-lg lg:text-xl text-white/90 mb-8 max-w-3xl mx-auto animate-fade-in-up">
@@ -180,7 +180,7 @@ export default function HomePage() {
                 >
                   <CardContent className="p-6 text-center">
                     <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="h-8 w-8 text-secondary" />
+                      <IconComponent className="h-8 w-8 text-primary-blue" />
                     </div>
                     <h3 className="font-heading text-xl font-semibold text-primary mb-2">
                       {feature.title}
@@ -231,7 +231,7 @@ export default function HomePage() {
                   <Button
                     variant="default"
                     size="lg"
-                    className="font-paragraph hover:scale-105 transition-all duration-300 bg-gradient-to-r from-primary to-secondary"
+                    className="font-paragraph hover:scale-105 transition-all duration-300"
                   >
                     Learn About Us
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -270,7 +270,7 @@ export default function HomePage() {
                 >
                   <CardContent className="p-6">
                     <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="h-6 w-6 text-secondary" />
+                      <IconComponent className="h-6 w-6 text-primary-blue" />
                     </div>
                     <h3 className="font-heading text-xl font-semibold text-primary mb-2">
                       {service.title}

@@ -228,7 +228,7 @@ export default function AboutPage() {
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                    <Target className="h-6 w-6 text-secondary" />
+                    <Target className="h-6 w-6 text-primary-blue" />
                   </div>
                   <h2 className="font-heading text-2xl font-bold text-primary">
                     Our Mission
@@ -244,7 +244,7 @@ export default function AboutPage() {
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                    <Eye className="h-6 w-6 text-secondary" />
+                    <Eye className="h-6 w-6 text-primary-blue" />
                   </div>
                   <h2 className="font-heading text-2xl font-bold text-primary">
                     Our Vision
@@ -294,7 +294,7 @@ export default function AboutPage() {
                   >
                     <CardContent className="p-6">
                       <div className="flex items-center mb-3">
-                        <Award className="h-5 w-5 text-secondary mr-2" />
+                        <Award className="h-5 w-5 text-primary-blue mr-2" />
                         <span className="font-heading font-semibold text-primary">
                           {milestone.year}
                         </span>
@@ -381,7 +381,7 @@ export default function AboutPage() {
               >
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <TrendingUp className="h-6 w-6 text-secondary" />
+                    <TrendingUp className="h-6 w-6 text-primary-blue" />
                   </div>
                   <div className="font-heading text-3xl font-bold text-primary mb-2 animate-counter">
                     {stat.statisticValue.toLocaleString()}

@@ -217,7 +217,7 @@ export default function ServicesPage() {
                 >
                   <CardContent className="p-6">
                     <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="h-6 w-6 text-secondary" />
+                      <IconComponent className="h-6 w-6 text-primary-blue" />
                     </div>
                     <h3 className="font-heading text-xl font-semibold text-primary mb-2">
                       {service.title}
@@ -297,7 +297,7 @@ export default function ServicesPage() {
               >
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <TrendingUp className="h-6 w-6 text-secondary" />
+                    <TrendingUp className="h-6 w-6 text-primary-blue" />
                   </div>
                   <div className="font-heading text-3xl font-bold text-primary mb-2 animate-counter">
                     {stat.statisticValue.toLocaleString()}

@@ -75,12 +75,15 @@ const Footer: React.FC = () => {
                 <Phone className="h-4 w-4 text-white/80 mr-2 flex-shrink-0" />
                 <span className="text-white/90 text-sm">+91 9811153942</span>
               </div>
-              <div className="flex items-center justify-center md:justify-start">
-                <MapPin className="h-4 w-4 text-white/80 mr-2 flex-shrink-0" />
-                <span className="text-white/90 text-sm">
-                  1/5599 Street No 14, Balbir Nagar Extn., Shahdara, Delhi – 110032
-                </span>
-              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-center md:justify-start text-center md:text-left gap-1">
+  <div className="flex justify-center sm:justify-start">
+    <MapPin className="h-4 w-4 text-white/80 mr-2 flex-shrink-0" />
+  </div>
+  <span className="text-white/90 text-sm break-words whitespace-normal">
+    1/5599 Street No 14, Balbir Nagar Extn, Shahdara, Delhi – 110032
+  </span>
+</div>
+
             </div>
           </div>
         </div>
