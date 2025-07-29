@@ -43,17 +43,20 @@ export default function HomePage() {
     {
       icon: Zap,
       title: "Instant Transactions",
-      description: "Complete transfers in hours, not weeks — thanks to our smart-matching and automated process.",
+      description:
+        "Complete transfers in hours, not weeks — thanks to our smart-matching and automated process.",
     },
     {
       icon: Shield,
       title: "RIR-Compliant Transfers",
-      description: "Full compliance with ARIN, RIPE, APNIC, LACNIC, and AFRINIC policies. We handle the paperwork.",
+      description:
+        "Full compliance with ARIN, RIPE, APNIC, LACNIC, and AFRINIC policies. We handle the paperwork.",
     },
     {
       icon: Globe,
       title: "Global Reach",
-      description: "Connect with verified brokers, ISPs, and enterprises from around the world.",
+      description:
+        "Connect with verified brokers, ISPs, and enterprises from around the world.",
     },
   ];
 
@@ -61,7 +64,8 @@ export default function HomePage() {
     {
       icon: Network,
       title: "Buy IPv4 Addresses",
-      description: "From /24 to /16 blocks — discover verified, transfer-ready addresses.",
+      description:
+        "From /24 to /16 blocks — discover verified, transfer-ready addresses.",
     },
     {
       icon: DollarSign,
@@ -71,12 +75,14 @@ export default function HomePage() {
     {
       icon: FileText,
       title: "Secure IPv4 Marketplace",
-      description: "Buy and sell IPv4 blocks with escrow-backed security and full IP ownership protection.",
+      description:
+        "Buy and sell IPv4 blocks with escrow-backed security and full IP ownership protection.",
     },
     {
       icon: Users,
       title: "Transfer Support",
-      description: "We guide you through ARIN, RIPE, APNIC, AFRINIC, and LACNIC procedures.",
+      description:
+        "We guide you through ARIN, RIPE, APNIC, AFRINIC, and LACNIC procedures.",
     },
     {
       icon: Award,
@@ -91,17 +97,118 @@ export default function HomePage() {
     {
       icon: Globe,
       title: "Verified IPv4 Exchange",
-      description: "Trade IPv4 blocks securely with escrow, fraud protection, and compliance support.",
+      description:
+        "Trade IPv4 blocks securely with escrow, fraud protection, and compliance support.",
     },
     {
       icon: Server,
       title: "IPv6 Transition Help",
-      description: "Prepare your infrastructure for the future with our guidance.",
+      description:
+        "Prepare your infrastructure for the future with our guidance.",
     },
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "IPv4Bazaar",
+    alternateName: "IPv4 Bazaar",
+    url: "https://ipbazaar.in/",
+    logo: "https://ipbazaar.in/logo.png",
+    description:
+      "IPv4Bazaar is a global marketplace and platform for IPv4 and IPv6 address auctions, transfers, brokerage, and IP consulting. We offer expert services for buying, selling, and managing IP addresses, including APNIC WHOIS, DNS tools, and IP address pricing insights.",
+    keywords: [
+      "ipv4",
+      "ip address",
+      "ipv4 address",
+      "ipv4 price",
+      "ipv4 global",
+      "host to ip",
+      "ipv4 auctions",
+      "ipv4 marketplace",
+      "ip v6",
+      "ipv4 address price",
+      "ipv4 brokers",
+      "apnic whois",
+      "my ipv4",
+      "ipv6 to ipv4",
+      "ipv4 to ipv6",
+      "ipv4 over ipv6",
+      "dns google ipv4",
+    ],
+    founder: {
+      "@type": "Person",
+      name: "Janmay Jain",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91 9811153942",
+      contactType: "Sales",
+      email: "sales@infinityconsultants.in",
+      areaServed: "IN",
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "1/5599 Street No 14, Balbir Nagar Extn, Shahdara",
+      addressLocality: "Delhi",
+      addressRegion: "Delhi",
+      postalCode: "110032",
+      addressCountry: "IN",
+    },
+    sameAs: [
+      "https://www.linkedin.com/company/ipbazaar",
+      "https://twitter.com/ipbazaar",
+      "https://www.facebook.com/ipbazaar",
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "IP Address Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "IPv4 Address Brokerage",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "IPv4 Auctions",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "IPv6 to IPv4 Solutions",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "IPv4 Address Pricing & Transfers",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "DNS & APNIC WHOIS Lookup",
+          },
+        },
+      ],
+    },
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navigation />
 
       {/* Hero Section */}
@@ -116,7 +223,7 @@ export default function HomePage() {
             className="w-full h-full object-cover"
             poster="/api/placeholder/1920/"
           >
-            <source src="Bg_Video.mp4" type="video/mp4" />  
+            <source src="Bg_Video.mp4" type="video/mp4" />
             {/* Fallback gradient if video doesn't load */}
           </video>
           {/* Video overlay */}
@@ -129,11 +236,13 @@ export default function HomePage() {
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-white mb-3   animate-fade-in-up">
               The #1 Marketplace for
               <span className="block text-secondary-foreground bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent animate-gradient pb-2">
-              Buying Selling IPv4 Addresses
+                Buying Selling IPv4 Addresses
               </span>
             </h1>
             <p className="font-paragraph text-lg lg:text-xl text-white/90 mb-8 max-w-3xl mx-auto animate-fade-in-up">
-              IPv4 addresses are running out — IPV4Bazaar connects you with verified buyers and sellers for secure, fast, and cost-effective IP address transactions worldwide.
+              IPv4 addresses are running out — IPV4Bazaar connects you with
+              verified buyers and sellers for secure, fast, and cost-effective
+              IP address transactions worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
               <Link to="/contact">
@@ -165,7 +274,10 @@ export default function HomePage() {
               Why Choose IPV4Bazaar?
             </h2>
             <p className="font-paragraph text-lg text-gray-600 max-w-3xl mx-auto">
-              IPV4Bazaar simplifies the process of acquiring and monetizing IPv4 addresses. Our platform is designed for everyone — from tech startups to Fortune 500s — ensuring secure, compliant, and cost-effective IP transactions.
+              IPV4Bazaar simplifies the process of acquiring and monetizing IPv4
+              addresses. Our platform is designed for everyone — from tech
+              startups to Fortune 500s — ensuring secure, compliant, and
+              cost-effective IP transactions.
             </p>
           </div>
 
@@ -204,25 +316,40 @@ export default function HomePage() {
               <div className="bg-gradient-to-r from-primary to-secondary p-6 rounded-lg text-white mb-8">
                 <div className="flex items-center mb-4">
                   <div className="text-3xl mr-3">🚀</div>
-                  <h3 className="font-heading text-xl font-bold">Our Mission</h3>
+                  <h3 className="font-heading text-xl font-bold">
+                    Our Mission
+                  </h3>
                 </div>
                 <p className="font-paragraph text-white/90">
-                  To make IP address trading as easy and secure as buying a domain name — empowering digital growth across the globe.
+                  To make IP address trading as easy and secure as buying a
+                  domain name — empowering digital growth across the globe.
                 </p>
               </div>
 
               <div className="grid grid-cols-3 gap-4 mb-6">
                 <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-                  <div className="font-heading text-2xl font-bold text-primary">2024</div>
-                  <div className="font-paragraph text-sm text-gray-600">Established</div>
+                  <div className="font-heading text-2xl font-bold text-primary">
+                    2024
+                  </div>
+                  <div className="font-paragraph text-sm text-gray-600">
+                    Established
+                  </div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-                  <div className="font-heading text-2xl font-bold text-primary">100+</div>
-                  <div className="font-paragraph text-sm text-gray-600">Happy Clients</div>
+                  <div className="font-heading text-2xl font-bold text-primary">
+                    100+
+                  </div>
+                  <div className="font-paragraph text-sm text-gray-600">
+                    Happy Clients
+                  </div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-                  <div className="font-heading text-2xl font-bold text-primary">1000+</div>
-                  <div className="font-paragraph text-sm text-gray-600">IPs Traded</div>
+                  <div className="font-heading text-2xl font-bold text-primary">
+                    1000+
+                  </div>
+                  <div className="font-paragraph text-sm text-gray-600">
+                    IPs Traded
+                  </div>
                 </div>
               </div>
 
@@ -293,13 +420,12 @@ export default function HomePage() {
               >
                 <span className="relative">
                   View All Services
-        <span className="absolute left-0 -bottom-0.5 h-0.5 w-full origin-right scale-x-0 bg-primary transition-transform duration-300 ease-out group-hover:scale-x-100 group-hover:origin-left" />
-      </span>
-      <ArrowRight className="ml-2 h-5 w-5" />
-    </Button>
-  </Link>
-</div>
-
+                  <span className="absolute left-0 -bottom-0.5 h-0.5 w-full origin-right scale-x-0 bg-primary transition-transform duration-300 ease-out group-hover:scale-x-100 group-hover:origin-left" />
+                </span>
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -317,10 +443,12 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
-          Ready to Buy, Sell, or Rent IPv4?
+            Ready to Buy, Sell, or Rent IPv4?
           </h2>
           <p className="font-paragraph text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-            Join 1000+ businesses using IPV4Bazaar to power their digital infrastructure. Fast approvals, verified assets, and expert support at every step.
+            Join 1000+ businesses using IPV4Bazaar to power their digital
+            infrastructure. Fast approvals, verified assets, and expert support
+            at every step.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
