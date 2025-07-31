@@ -1,5 +1,5 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import React from "react";
+import { Helmet } from "react-helmet";
 
 interface SEOProps {
   title?: string;
@@ -9,10 +9,10 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'IPV4Bazaar',
-  description = 'Your trusted partner for comprehensive intellectual property management services.',
+  title = "IPV4Bazaar",
+  description = "Your trusted partner for comprehensive intellectual property management services.",
   noindex = false,
-  keywords = 'IP management, IP addresses, network management',
+  keywords = "IP management, IP addresses, network management",
 }) => {
   const siteTitle = `${title} | IPV4Bazaar`;
 
