@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /profile/
+Disallow: /verify-email
+Disallow: /verify-waiting
+
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /contact
+Allow: /credits
+Allow: /login
+Allow: /signup  
